@@ -48,15 +48,18 @@ void test4() {
     "sbi 0x04, %0 \n"          // 1C: set DDRB5 to 1  
     "sts 0x25, %1 \n"          // 2C: PORTB = (1<<5)
     "mov __tmp_reg__, %1 \n"   // 1C: t = (1<<5)
-    "L2:                 \n"
+    "L4:                 \n"
     "in  %1, 0x05        \n"   // 1C: r = PORTB
     "eor %1, __tmp_reg__ \n"   // 1C: r = r ^ t
     "out 0x05, %1        \n"   // 1C: PORTB = r
-    "rjmp L2             \n"   // 2C
+    "rjmp L4             \n"   // 2C
     : : "I" (5), "r" (1<<5)
   ); 
 }
 
 int main(void) {
   test1();
+  //test2();
+  //test3();
+  //test4();
 }
