@@ -1,1 +1,1 @@
-# atmega328_examples
+# atmega328 C/C++ examples (for AVR-GCC)
